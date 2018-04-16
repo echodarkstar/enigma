@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Enigma Machine</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
+                </a>
+            </div> -->
+
+
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll head" href="#about">History</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll head" href="#download">Encrypt!</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <a href="#about" class="btn btn-circle btn-down page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HISTORY Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Unwrapping the Enigma</h2>
+                <p>Enigma was invented by the German engineer Arthur Scherbius at the end of World War I. Early models were used commercially from the early 1920s, and adopted by military and government services of several countries, most notably Nazi Germany before and during World War II.</p>
+                <p>The Polish Cipher Bureau developed techniques to defeat the plugboard and find all components of the daily key, which enabled the Cipher Bureau to read the German's Enigma messages.</p>
+                <p>During the war, British cryptologists decrypted a vast number of messages enciphered on Enigma. The intelligence gleaned from this source, codenamed "Ultra" by the British, was a substantial aid to the Allied war effort.</p>
+            </div>
+        </div>
+    </section>
+    <!-- It's still magic even if you know how it's done -->
+    <!-- UNDERSTAND Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+              <div class="srow">
+                <div class="well col-sm-6" align="left" id="pt">Plaintext -</div>
+                <div class="well col-sm-6" align="left" id="st">Ciphertext -</div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="container col-sm-4" id="rotors">
+                <ul class="list-group col-sm-4 unstyled" >
+                  <li class="list-group-item" id="rotor1"></li>
+                </ul>
+                <ul class="list-group col-sm-4 unstyled" >
+                  <li class="list-group-item" id="rotor2"></li>
+                </ul>
+                <ul class="list-group col-sm-4 unstyled" >
+                  <li class="list-group-item" id="rotor3"></li>
+                </ul>
+                <div style = "padding: 100px 100px 10px;">
+                  <form class = "bs-example bs-example-form" role = "form">
+                    <div class = "input-group">
+                      <input type = "text" placeholder="Rotor I" class = "form-control" id="I">
+                      <span class = "input-group-btn"><button class="btn btn-default gob" type="button" id="r1">Go</button></span>
+                    </div>
+                    <div class = "input-group">
+                      <input type = "text" placeholder="Rotor II" class = "form-control" id="II" >
+                      <span class = "input-group-btn"><button class="btn btn-default gob" type="button" id="r2">Go</button></span>
+                    </div>
+                    <div class = "input-group">
+                      <input type = "text" placeholder="Rotor III" class = "form-control" id="III" >
+                      <span class = "input-group-btn"><button class="btn btn-default gob" type="button" id="r3">Go</button></span>
+                    </div>
+                  </form>
+                </div>
+                <div class="random ">
+                  <button class="btn btn-info btn-reset">Reset</button>
+                </div>
+              </div>
+
+              <div class="container col-sm-4" id="temp">
+                <div class="row" id="lightb">
+                  <div class="prow1">
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                  </div>
+                  <div class="prow2">
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                  </div>
+                  <div class="prow3">
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                    <div class="btn btn-default btn-circle disabled" style="cursor:default;"></div>
+                  </div>
+                </div>
+                <div class="row" id ="keyb">
+                  <div class="row1">
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                  </div>
+                  <div class="row2">
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                  </div>
+                  <div class="row3">
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                    <button type="button" class="btn btn-primary btn-circle "></button>
+                  </div>
+                </div>
+                <div class="row" id = "plugb">
+                  <div class="plug1">
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                  </div>
+                  <div class="plug2">
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                  </div>
+                  <div class="plug3">
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                    <button class="btn btn-danger btn-circle"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="container col-sm-4">
+                <div class="well opener">
+                  <p class="vert">Hover over a region to learn about it!</p>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Nishant Shankar, 2016</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
